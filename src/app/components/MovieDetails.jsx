@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 // import { useParams } from "react-router-dom";
 import { Container, Row, Col } from "react-bootstrap";
+import { token } from "../token";
 export default function MovieDetails({ params }) {
   // const params = useParams();
   const [filmDetails, setFilmDetails] = useState({});
@@ -46,8 +47,7 @@ export default function MovieDetails({ params }) {
         "https://striveschool-api.herokuapp.com/api/comments/" + params.movieId,
         {
           headers: {
-            Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTNhNGFkZmY2ZTNkZDAwMTQ5NWU0MzMiLCJpYXQiOjE2OTgzMTkwNzEsImV4cCI6MTY5OTUyODY3MX0.6OiHMcwB71-jL1waCDYllDV5ONJ4nMJocBRyTYVP518",
+            Authorization: `Bearer ${token}`,
           },
         }
       );
@@ -88,7 +88,10 @@ export default function MovieDetails({ params }) {
           <h4 className="text-center text-white my-3">Commenti</h4>
           {listOfComments.map((comment) => {
             return (
-              <div className="d-flex flex-column align-items-center">
+              <div
+                className="d-flex flex-column align-items-center"
+                key={comment._id}
+              >
                 <div className="d-flex flex-column align-items-center bg-dark border rounded-2  w-50 mb-4">
                   <div className="text-center text-white">
                     <div className="py-2">
