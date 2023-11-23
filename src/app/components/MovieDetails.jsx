@@ -1,8 +1,9 @@
+"use client";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+// import { useParams } from "react-router-dom";
 import { Container, Row, Col } from "react-bootstrap";
-export default function MovieDetails() {
-  const params = useParams();
+export default function MovieDetails({ params }) {
+  // const params = useParams();
   const [filmDetails, setFilmDetails] = useState({});
   const [detailsKeys, setdetailsKeys] = useState([]);
   const [listOfComments, setlistOfComments] = useState([]);

@@ -38,7 +38,7 @@ export default function Header({ setSearch }) {
             </Link>
           </li>
           <li>
-            <Link href="tv-shows" className="link">
+            <Link href="/tv-shows" className="link">
               TV Shows
             </Link>
           </li>
